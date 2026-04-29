@@ -66,17 +66,17 @@ export function ResetPassword() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.2, 0.65, 0.2, 1] }}
           >
-          <div className="cinematic-panel-strong p-8 text-center">
-            <div className="flex justify-center mb-4">
-              <CheckCircle className="h-16 w-16 text-primary" />
+            <div className="cinematic-panel-strong p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <CheckCircle className="h-16 w-16 text-primary" />
+              </div>
+              <h2 className="mb-2 text-2xl font-semibold text-white/90">
+                Password Reset Successful
+              </h2>
+              <p className="mb-6 text-white/60">
+                Your password has been updated. Redirecting to login...
+              </p>
             </div>
-            <h2 className="mb-2 text-2xl font-semibold text-white/90">
-              Password Reset Successful
-            </h2>
-            <p className="mb-6 text-white/60">
-              Your password has been updated. Redirecting to login...
-            </p>
-          </div>
           </motion.div>
         </div>
       </div>
@@ -94,82 +94,82 @@ export function ResetPassword() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.2, 0.65, 0.2, 1] }}
         >
-        <div className="cinematic-panel-strong p-8">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <div className="flex items-center gap-3">
-              <img
-                src="/images/logos/feraj-solar-logo.png"
-                alt="Feraj Solar Limited Logo"
-                className="h-16 w-16 object-contain"
-              />
-              <span className="text-2xl font-semibold tracking-tight text-white/90">
-                Feraj Solar Limited
-              </span>
-            </div>
-          </div>
-
-          <h2 className="mb-6 text-center text-2xl font-semibold text-white/90">
-            Set New Password
-          </h2>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label className="mb-2 block text-sm font-medium text-white/75">
-                New Password
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  disabled={loading}
-                  className={fieldClassName}
-                  placeholder="••••••••"
+          <div className="cinematic-panel-strong p-8">
+            {/* Logo */}
+            <div className="flex justify-center mb-8">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/images/logos/feraj-solar-logo.png"
+                  alt="Feraj Solar Limited Logo"
+                  className="h-16 w-16 object-contain"
                 />
-              </div>
-              <p className="mt-2 text-xs text-white/52">
-                Must be at least 8 characters with uppercase, lowercase, number,
-                and special character
-              </p>
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-medium text-white/75">
-                Confirm New Password
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
-                <input
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                  disabled={loading}
-                  className={fieldClassName}
-                  placeholder="••••••••"
-                />
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full rounded-md border border-primary/35 bg-primary/90 py-3 font-semibold text-primary-foreground transition hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              {loading ? (
-                <span className="flex items-center justify-center gap-2">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                  Updating password...
+                <span className="text-2xl font-semibold tracking-tight text-white/90">
+                  Feraj Solar Limited
                 </span>
-              ) : (
-                'Update Password'
-              )}
-            </button>
-          </form>
-        </div>
+              </div>
+            </div>
+
+            <h2 className="mb-6 text-center text-2xl font-semibold text-white/90">
+              Set New Password
+            </h2>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="mb-2 block text-sm font-medium text-white/75">
+                  New Password
+                </label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    disabled={loading}
+                    className={fieldClassName}
+                    placeholder="••••••••"
+                  />
+                </div>
+                <p className="mt-2 text-xs text-white/52">
+                  Must be at least 8 characters with uppercase, lowercase,
+                  number, and special character
+                </p>
+              </div>
+
+              <div>
+                <label className="mb-2 block text-sm font-medium text-white/75">
+                  Confirm New Password
+                </label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
+                  <input
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                    disabled={loading}
+                    className={fieldClassName}
+                    placeholder="••••••••"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full rounded-md border border-primary/35 bg-primary/90 py-3 font-semibold text-primary-foreground transition hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    Updating password...
+                  </span>
+                ) : (
+                  'Update Password'
+                )}
+              </button>
+            </form>
+          </div>
         </motion.div>
       </div>
     </div>

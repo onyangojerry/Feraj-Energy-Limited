@@ -31,38 +31,86 @@ export function WhyGreen() {
               <div className="h-14 w-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 border border-primary/20">
                 <Leaf className="h-7 w-7 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-6 text-white/92">Environmental Impact</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white/92">
+                Environmental Impact
+              </h3>
               <ul className="space-y-4 text-white/50 leading-relaxed">
-                <li className="flex gap-3"><span className="text-primary">•</span> Zero greenhouse gas emissions</li>
-                <li className="flex gap-3"><span className="text-primary">•</span> Reduces air and water pollution</li>
-                <li className="flex gap-3"><span className="text-primary">•</span> Conserves natural resources</li>
-                <li className="flex gap-3"><span className="text-primary">•</span> Protects global ecosystems</li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> Zero greenhouse gas
+                  emissions
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> Reduces air and water
+                  pollution
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> Conserves natural
+                  resources
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> Protects global
+                  ecosystems
+                </li>
               </ul>
             </div>
 
-            <div className="animate-reveal" style={{ '--reveal-delay': '0.1s' } as any}>
+            <div
+              className="animate-reveal"
+              style={{ '--reveal-delay': '0.1s' } as any}
+            >
               <div className="h-14 w-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-8 border border-accent/20">
                 <DollarSign className="h-7 w-7 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold mb-6 text-white/92">Economic Benefits</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white/92">
+                Economic Benefits
+              </h3>
               <ul className="space-y-4 text-white/50 leading-relaxed">
-                <li className="flex gap-3"><span className="text-accent">•</span> Lower electricity bills long-term</li>
-                <li className="flex gap-3"><span className="text-accent">•</span> Hedge against rising energy costs</li>
-                <li className="flex gap-3"><span className="text-accent">•</span> Increases property value 3-4%</li>
-                <li className="flex gap-3"><span className="text-accent">•</span> Tax incentives and rebates</li>
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span> Lower electricity bills
+                  long-term
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span> Hedge against rising
+                  energy costs
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span> Increases property
+                  value 3-4%
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span> Tax incentives and
+                  rebates
+                </li>
               </ul>
             </div>
 
-            <div className="animate-reveal" style={{ '--reveal-delay': '0.2s' } as any}>
+            <div
+              className="animate-reveal"
+              style={{ '--reveal-delay': '0.2s' } as any}
+            >
               <div className="h-14 w-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 border border-primary/20">
                 <Shield className="h-7 w-7 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-6 text-white/92">Energy Independence</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white/92">
+                Energy Independence
+              </h3>
               <ul className="space-y-4 text-white/50 leading-relaxed">
-                <li className="flex gap-3"><span className="text-primary">•</span> Reduces fossil fuel dependence</li>
-                <li className="flex gap-3"><span className="text-primary">•</span> Protects from grid outages</li>
-                <li className="flex gap-3"><span className="text-primary">•</span> National energy security</li>
-                <li className="flex gap-3"><span className="text-primary">•</span> Self-sufficient power generation</li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> Reduces fossil fuel
+                  dependence
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> Protects from grid
+                  outages
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> National energy
+                  security
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span> Self-sufficient power
+                  generation
+                </li>
               </ul>
             </div>
           </div>
@@ -81,20 +129,35 @@ export function WhyGreen() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
-            <div className="text-center animate-reveal" style={{ '--reveal-delay': '0s' } as any}>
-              <div className="text-5xl font-bold text-red-500/80 mb-4">+1.1°C</div>
+            <div
+              className="text-center animate-reveal"
+              style={{ '--reveal-delay': '0s' } as any}
+            >
+              <div className="text-5xl font-bold text-red-500/80 mb-4">
+                +1.1°C
+              </div>
               <p className="text-sm uppercase tracking-widest text-white/40 font-semibold">
                 Temperature Rise
               </p>
             </div>
-            <div className="text-center animate-reveal" style={{ '--reveal-delay': '0.1s' } as any}>
-              <div className="text-5xl font-bold text-orange-500/80 mb-4">37Gt</div>
+            <div
+              className="text-center animate-reveal"
+              style={{ '--reveal-delay': '0.1s' } as any}
+            >
+              <div className="text-5xl font-bold text-orange-500/80 mb-4">
+                37Gt
+              </div>
               <p className="text-sm uppercase tracking-widest text-white/40 font-semibold">
                 Annual CO₂ Emissions
               </p>
             </div>
-            <div className="text-center animate-reveal" style={{ '--reveal-delay': '0.2s' } as any}>
-              <div className="text-5xl font-bold text-accent/80 mb-4">419ppm</div>
+            <div
+              className="text-center animate-reveal"
+              style={{ '--reveal-delay': '0.2s' } as any}
+            >
+              <div className="text-5xl font-bold text-accent/80 mb-4">
+                419ppm
+              </div>
               <p className="text-sm uppercase tracking-widest text-white/40 font-semibold">
                 Atmospheric CO₂
               </p>
@@ -159,7 +222,9 @@ export function WhyGreen() {
                     <Home className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2 text-white/90">Residential</h4>
+                    <h4 className="text-xl font-bold mb-2 text-white/90">
+                      Residential
+                    </h4>
                     <p className="text-white/50 leading-relaxed">
                       Rooftop systems for homes, apartments, and communities
                       providing clean power
@@ -171,7 +236,9 @@ export function WhyGreen() {
                     <Factory className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2 text-white/90">Commercial & Industrial</h4>
+                    <h4 className="text-xl font-bold mb-2 text-white/90">
+                      Commercial & Industrial
+                    </h4>
                     <p className="text-white/50 leading-relaxed">
                       Large-scale installations reducing operational costs and
                       carbon footprint
@@ -183,7 +250,9 @@ export function WhyGreen() {
                     <TrendingDown className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2 text-white/90">Utility-Scale</h4>
+                    <h4 className="text-xl font-bold mb-2 text-white/90">
+                      Utility-Scale
+                    </h4>
                     <p className="text-white/50 leading-relaxed">
                       Solar farms generating megawatts of clean energy for the
                       grid
@@ -192,7 +261,10 @@ export function WhyGreen() {
                 </div>
               </div>
             </div>
-            <div className="relative animate-reveal" style={{ '--reveal-delay': '0.2s' } as any}>
+            <div
+              className="relative animate-reveal"
+              style={{ '--reveal-delay': '0.2s' } as any}
+            >
               <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl" />
               <img
                 src="https://images.unsplash.com/photo-1594373237925-5c674eda43b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMGVuZXJneSUyMHJlbmV3YWJsZXxlbnwxfHx8fDE3Njg5NTcwMzh8MA&ixlib=rb-4.1.0&q=80&w=1080"

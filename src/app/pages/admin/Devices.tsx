@@ -140,9 +140,7 @@ export function AdminDevices() {
             Pending Registrations
           </h2>
           {pendingRegistrations.length === 0 ? (
-            <p className="text-white/60">
-              No pending registrations right now.
-            </p>
+            <p className="text-white/60">No pending registrations right now.</p>
           ) : (
             <div className="space-y-4">
               {pendingRegistrations.map((reg) => (
@@ -277,7 +275,9 @@ export function AdminDevices() {
         <div className="cinematic-panel border border-primary/20 p-6">
           <div className="mb-3 flex items-center gap-2 text-primary">
             <CheckCircle className="h-5 w-5" />
-            <h3 className="text-lg font-semibold text-white/92">Device API Key Issued</h3>
+            <h3 className="text-lg font-semibold text-white/92">
+              Device API Key Issued
+            </h3>
           </div>
           <p className="mb-4 text-sm text-white/60">
             Copy and store this key now. It won&apos;t be shown again.

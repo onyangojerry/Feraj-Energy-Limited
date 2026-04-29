@@ -136,7 +136,8 @@
 
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(
+    background-image:
+      radial-gradient(
         circle at 12% -6%,
         rgba(49, 209, 122, 0.12),
         transparent 40%

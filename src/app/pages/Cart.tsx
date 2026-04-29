@@ -4,7 +4,10 @@ import { Trash2, Plus, Minus, CreditCard, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { motion } from 'motion/react';
-import { getProducts, type Product as DbProduct } from '@/services/products.service';
+import {
+  getProducts,
+  type Product as DbProduct,
+} from '@/services/products.service';
 import {
   buildCheckoutMessage,
   calculatePaymentSummary,
@@ -218,9 +221,7 @@ export function Cart() {
                         <h3 className="text-lg font-semibold text-white/90">
                           {item.name}
                         </h3>
-                        <p className="text-sm text-white/55">
-                          {item.category}
-                        </p>
+                        <p className="text-sm text-white/55">{item.category}</p>
                       </div>
                       <button
                         onClick={() => removeItem(item.id)}

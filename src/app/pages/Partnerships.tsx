@@ -1,11 +1,26 @@
 import { Building2, Handshake, Globe2, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Partnerships() {
   const partners = [
     {
-      name: 'Tesla Energy',
-      type: 'Technology Partner',
-      description: 'Integrated battery solutions',
+      name: 'CDG International Group',
+      type: 'Strategic Partner',
+      description:
+        'Make the world more connectible, Make the cities more livable',
+      details: {
+        website: 'www.cdg.com.cn',
+        address: 'No.9 Ziyun Avenue, Nanjing, Jiangsu Province, China',
+        postalCode: '210014',
+        switchboard: '+86-25-88018888',
+        fax: '+86-25-84405744',
+        about:
+          'Founded in 1960, CDG International Group is a leading full-service engineering consulting and technology provider in China, focusing on transportation and urban-rural infrastructure. With over 6200 employees and a global presence, CDG is committed to creating a more connectible world and promoting livable cities.',
+        mission:
+          'To create a more connectible world and promote more livable cities. Aims to create exceptional value for customers through excellent technologies and impeccable services.',
+        vision:
+          'To become a top provider of technologies and services in transportation development and urban construction industries.',
+      },
     },
     {
       name: 'Google',
@@ -49,48 +64,71 @@ export function Partnerships() {
       <section className="py-24 border-t border-white/5 bg-white/[0.01]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24 animate-reveal">
-            <h2 className="text-4xl font-bold mb-6 text-white/92">Why Partner With Us</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white/92">
+              Why Partner With Us
+            </h2>
             <p className="text-xl text-white/50 max-w-2xl mx-auto">
-              Building the future of energy together through global innovation and trusted expertise
+              Building the future of energy together through global innovation
+              and trusted expertise
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-32">
-            <div className="text-center animate-reveal" style={{ '--reveal-delay': '0s' } as any}>
+            <div
+              className="text-center animate-reveal"
+              style={{ '--reveal-delay': '0s' } as any}
+            >
               <div className="h-16 w-16 bg-accent/5 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-accent/20">
                 <Globe2 className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white/90">Global Reach</h3>
+              <h3 className="text-xl font-bold mb-4 text-white/90">
+                Global Reach
+              </h3>
               <p className="text-white/50 text-sm leading-relaxed">
                 Operations in 60+ countries across 6 continents
               </p>
             </div>
 
-            <div className="text-center animate-reveal" style={{ '--reveal-delay': '0.1s' } as any}>
+            <div
+              className="text-center animate-reveal"
+              style={{ '--reveal-delay': '0.1s' } as any}
+            >
               <div className="h-16 w-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-primary/20">
                 <Award className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white/90">Industry Leader</h3>
+              <h3 className="text-xl font-bold mb-4 text-white/90">
+                Industry Leader
+              </h3>
               <p className="text-white/50 text-sm leading-relaxed">
-                25+ years of solar innovation excellence
+                3+ years of solar innovation excellence
               </p>
             </div>
 
-            <div className="text-center animate-reveal" style={{ '--reveal-delay': '0.2s' } as any}>
+            <div
+              className="text-center animate-reveal"
+              style={{ '--reveal-delay': '0.2s' } as any}
+            >
               <div className="h-16 w-16 bg-accent/5 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-accent/20">
                 <Building2 className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white/90">Enterprise Scale</h3>
+              <h3 className="text-xl font-bold mb-4 text-white/90">
+                Enterprise Scale
+              </h3>
               <p className="text-white/50 text-sm leading-relaxed">
-                500K+ installations generating 2.5GW capacity
+                50+ installations generating 2.5GW capacity
               </p>
             </div>
 
-            <div className="text-center animate-reveal" style={{ '--reveal-delay': '0.3s' } as any}>
+            <div
+              className="text-center animate-reveal"
+              style={{ '--reveal-delay': '0.3s' } as any}
+            >
               <div className="h-16 w-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-primary/20">
                 <Handshake className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white/90">Trusted Partner</h3>
+              <h3 className="text-xl font-bold mb-4 text-white/90">
+                Trusted Partner
+              </h3>
               <p className="text-white/50 text-sm leading-relaxed">
                 98% customer satisfaction and retention
               </p>
@@ -110,7 +148,39 @@ export function Partnerships() {
                 <h3 className="text-2xl font-bold mb-4 text-white/90 group-hover:text-white transition-colors">
                   {partner.name}
                 </h3>
-                <p className="text-white/50 leading-relaxed text-sm">{partner.description}</p>
+                <p className="text-white/50 leading-relaxed text-sm">
+                  {partner.description}
+                </p>
+
+                {/* CDG Details - Conditionally render */}
+                {partner.name === 'CDG International Group' &&
+                  partner.details && (
+                    <div className="mt-6 text-left text-sm text-white/50 leading-relaxed space-y-2">
+                      <p>{partner.details.about}</p>
+                      <p className="font-semibold text-white/70">
+                        Mission: {partner.details.mission}
+                      </p>
+                      <p className="font-semibold text-white/70">
+                        Vision: {partner.details.vision}
+                      </p>
+                      <p>
+                        Website:{' '}
+                        <a
+                          href={`http://${partner.details.website}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          {partner.details.website}
+                        </a>
+                      </p>
+                      <p>Address: {partner.details.address}</p>
+                      <p>
+                        Switchboard: {partner.details.switchboard} | Fax:{' '}
+                        {partner.details.fax}
+                      </p>
+                    </div>
+                  )}
               </div>
             ))}
           </div>
@@ -119,14 +189,19 @@ export function Partnerships() {
 
       <section className="py-32 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-reveal">
-          <h2 className="text-4xl font-bold mb-8 text-white/92">Become a Partner</h2>
+          <h2 className="text-4xl font-bold mb-8 text-white/92">
+            Become a Partner
+          </h2>
           <p className="text-xl text-white/50 mb-10 leading-relaxed">
             Join our network of innovators, manufacturers, and distributors
             shaping the future of renewable energy in East Africa.
           </p>
-          <button className="px-10 py-4 bg-primary/10 border border-primary/40 text-primary rounded-lg hover:bg-primary transition-all font-bold uppercase tracking-widest text-sm">
+          <Link
+            to="/partnership-request"
+            className="inline-block px-10 py-4 bg-primary/10 border border-primary/40 text-primary rounded-lg hover:bg-primary text-white transition-all font-bold uppercase tracking-widest text-sm cursor-pointer"
+          >
             Contact Partnership Team
-          </button>
+          </Link>
         </div>
       </section>
     </div>

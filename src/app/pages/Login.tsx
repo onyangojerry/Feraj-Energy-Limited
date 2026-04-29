@@ -133,223 +133,223 @@ export function Login() {
           transition={{ duration: 0.55, ease: [0.2, 0.65, 0.2, 1] }}
         >
           <div className="cinematic-panel-strong p-8">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <div className="flex items-center gap-3">
-              <img
-                src="/images/logos/feraj-solar-logo.png"
-                alt="Feraj Solar Limited Logo"
-                className="h-16 w-16 object-contain"
-              />
-              <span className="text-2xl font-semibold tracking-tight text-white/90">
-                Feraj Solar Limited
-              </span>
-            </div>
-          </div>
-
-          {/* Email verification notice */}
-          {emailSent && (
-            <div className="mb-6 flex items-start gap-3 rounded-md border border-primary/30 bg-primary/10 p-4">
-              <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-sm text-primary/90">
-                  Please check your email and click the verification link to
-                  activate your account.
-                </p>
+            {/* Logo */}
+            <div className="flex justify-center mb-8">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/images/logos/feraj-solar-logo.png"
+                  alt="Feraj Solar Limited Logo"
+                  className="h-16 w-16 object-contain"
+                />
+                <span className="text-2xl font-semibold tracking-tight text-white/90">
+                  Feraj Solar Limited
+                </span>
               </div>
             </div>
-          )}
 
-          {/* Reset Password Form */}
-          {showResetPassword ? (
-            <>
-              <h2 className="mb-2 text-center text-2xl font-semibold text-white/90">
-                Reset Password
-              </h2>
-              <p className="mb-6 text-center text-sm text-white/60">
-                Enter your email address and we&apos;ll send you a link to reset
-                your password.
-              </p>
-              <form onSubmit={handleResetPassword} className="space-y-6">
+            {/* Email verification notice */}
+            {emailSent && (
+              <div className="mb-6 flex items-start gap-3 rounded-md border border-primary/30 bg-primary/10 p-4">
+                <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-white/75">
-                    Email Address
-                  </label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      disabled={loading}
-                      className={fieldClassName}
-                      placeholder="you@example.com"
-                    />
-                  </div>
+                  <p className="text-sm text-primary/90">
+                    Please check your email and click the verification link to
+                    activate your account.
+                  </p>
                 </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full rounded-md border border-primary/35 bg-primary/90 py-3 font-semibold text-primary-foreground transition hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {loading ? 'Sending...' : 'Send Reset Link'}
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setShowResetPassword(false)}
-                  className="w-full text-sm font-semibold text-primary transition hover:text-primary/85"
-                >
-                  Back to Login
-                </button>
-              </form>
-            </>
-          ) : (
-            <>
-              {/* Tabs */}
-              <div className="flex gap-4 mb-8">
-                <button
-                  onClick={() => {
-                    setIsLogin(true);
-                    setEmailSent(false);
-                  }}
-                  className={`flex-1 rounded-md border py-2 text-center font-semibold transition ${
-                    isLogin
-                      ? 'border-primary/35 bg-primary/90 text-primary-foreground'
-                      : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
-                  }`}
-                >
-                  Login
-                </button>
-                <button
-                  onClick={() => {
-                    setIsLogin(false);
-                    setEmailSent(false);
-                  }}
-                  className={`flex-1 rounded-md border py-2 text-center font-semibold transition ${
-                    !isLogin
-                      ? 'border-primary/35 bg-primary/90 text-primary-foreground'
-                      : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
-                  }`}
-                >
-                  Sign Up
-                </button>
               </div>
+            )}
 
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {!isLogin && (
+            {/* Reset Password Form */}
+            {showResetPassword ? (
+              <>
+                <h2 className="mb-2 text-center text-2xl font-semibold text-white/90">
+                  Reset Password
+                </h2>
+                <p className="mb-6 text-center text-sm text-white/60">
+                  Enter your email address and we&apos;ll send you a link to
+                  reset your password.
+                </p>
+                <form onSubmit={handleResetPassword} className="space-y-6">
                   <div>
                     <label className="mb-2 block text-sm font-medium text-white/75">
-                      Full Name
+                      Email Address
                     </label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
+                      <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
                       <input
-                        type="text"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
-                        required={!isLogin}
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
                         disabled={loading}
                         className={fieldClassName}
-                        placeholder="John Doe"
+                        placeholder="you@example.com"
                       />
                     </div>
                   </div>
-                )}
 
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-white/75">
-                    Email Address
-                  </label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      disabled={loading}
-                      className={fieldClassName}
-                      placeholder="you@example.com"
-                    />
-                  </div>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full rounded-md border border-primary/35 bg-primary/90 py-3 font-semibold text-primary-foreground transition hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {loading ? 'Sending...' : 'Send Reset Link'}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setShowResetPassword(false)}
+                    className="w-full text-sm font-semibold text-primary transition hover:text-primary/85"
+                  >
+                    Back to Login
+                  </button>
+                </form>
+              </>
+            ) : (
+              <>
+                {/* Tabs */}
+                <div className="flex gap-4 mb-8">
+                  <button
+                    onClick={() => {
+                      setIsLogin(true);
+                      setEmailSent(false);
+                    }}
+                    className={`flex-1 rounded-md border py-2 text-center font-semibold transition ${
+                      isLogin
+                        ? 'border-primary/35 bg-primary/90 text-primary-foreground'
+                        : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
+                    }`}
+                  >
+                    Login
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsLogin(false);
+                      setEmailSent(false);
+                    }}
+                    className={`flex-1 rounded-md border py-2 text-center font-semibold transition ${
+                      !isLogin
+                        ? 'border-primary/35 bg-primary/90 text-primary-foreground'
+                        : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
+                    }`}
+                  >
+                    Sign Up
+                  </button>
                 </div>
 
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-white/75">
-                    Password
-                  </label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
-                    <input
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                      disabled={loading}
-                      className={fieldClassName}
-                      placeholder="••••••••"
-                    />
-                  </div>
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {!isLogin && (
-                    <p className="mt-2 text-xs text-white/52">
-                      Must be at least 8 characters with uppercase, lowercase,
-                      number, and special character
-                    </p>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-white/75">
+                        Full Name
+                      </label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
+                        <input
+                          type="text"
+                          value={fullName}
+                          onChange={(e) => setFullName(e.target.value)}
+                          required={!isLogin}
+                          disabled={loading}
+                          className={fieldClassName}
+                          placeholder="John Doe"
+                        />
+                      </div>
+                    </div>
                   )}
-                </div>
 
-                {isLogin && (
-                  <div className="flex items-center justify-end">
-                    <button
-                      type="button"
-                      onClick={() => setShowResetPassword(true)}
-                      className="text-sm text-primary transition hover:text-primary/85"
-                    >
-                      Forgot password?
-                    </button>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-white/75">
+                      Email Address
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        disabled={loading}
+                        className={fieldClassName}
+                        placeholder="you@example.com"
+                      />
+                    </div>
                   </div>
-                )}
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full rounded-md border border-primary/35 bg-primary/90 py-3 font-semibold text-primary-foreground transition hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {loading ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      {isLogin ? 'Signing in...' : 'Creating account...'}
-                    </span>
-                  ) : isLogin ? (
-                    'Sign In'
-                  ) : (
-                    'Create Account'
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-white/75">
+                      Password
+                    </label>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
+                      <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        disabled={loading}
+                        className={fieldClassName}
+                        placeholder="••••••••"
+                      />
+                    </div>
+                    {!isLogin && (
+                      <p className="mt-2 text-xs text-white/52">
+                        Must be at least 8 characters with uppercase, lowercase,
+                        number, and special character
+                      </p>
+                    )}
+                  </div>
+
+                  {isLogin && (
+                    <div className="flex items-center justify-end">
+                      <button
+                        type="button"
+                        onClick={() => setShowResetPassword(true)}
+                        className="text-sm text-primary transition hover:text-primary/85"
+                      >
+                        Forgot password?
+                      </button>
+                    </div>
                   )}
-                </button>
-              </form>
 
-              <p className="mt-6 text-center text-sm text-white/58">
-                {isLogin
-                  ? "Don't have an account? "
-                  : 'Already have an account? '}
-                <button
-                  onClick={() => {
-                    setIsLogin(!isLogin);
-                    setEmailSent(false);
-                  }}
-                  disabled={loading}
-                  className="font-semibold text-primary transition hover:text-primary/85 disabled:opacity-50"
-                >
-                  {isLogin ? 'Sign up' : 'Sign in'}
-                </button>
-              </p>
-            </>
-          )}
-        </div>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full rounded-md border border-primary/35 bg-primary/90 py-3 font-semibold text-primary-foreground transition hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {loading ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                        {isLogin ? 'Signing in...' : 'Creating account...'}
+                      </span>
+                    ) : isLogin ? (
+                      'Sign In'
+                    ) : (
+                      'Create Account'
+                    )}
+                  </button>
+                </form>
+
+                <p className="mt-6 text-center text-sm text-white/58">
+                  {isLogin
+                    ? "Don't have an account? "
+                    : 'Already have an account? '}
+                  <button
+                    onClick={() => {
+                      setIsLogin(!isLogin);
+                      setEmailSent(false);
+                    }}
+                    disabled={loading}
+                    className="font-semibold text-primary transition hover:text-primary/85 disabled:opacity-50"
+                  >
+                    {isLogin ? 'Sign up' : 'Sign in'}
+                  </button>
+                </p>
+              </>
+            )}
+          </div>
         </motion.div>
       </div>
     </div>

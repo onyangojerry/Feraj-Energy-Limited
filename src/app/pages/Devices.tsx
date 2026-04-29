@@ -220,9 +220,12 @@ export function Devices() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(73,201,255,0.16),transparent_35%),radial-gradient(circle_at_84%_78%,rgba(49,209,122,0.14),transparent_42%)]" />
           <div className="relative">
             <p className="cinematic-eyebrow">Account Chapter • Devices</p>
-            <h1 className="mt-3 text-4xl font-semibold text-white/90 sm:text-5xl">My Devices</h1>
+            <h1 className="mt-3 text-4xl font-semibold text-white/90 sm:text-5xl">
+              My Devices
+            </h1>
             <p className="mt-3 text-white/60">
-            Monitor live energy output, device health, and installation details.
+              Monitor live energy output, device health, and installation
+              details.
             </p>
           </div>
         </section>
@@ -332,9 +335,7 @@ export function Devices() {
                       </p>
                     </div>
                     <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                      <p className="text-xs text-white/45">
-                        Temperature
-                      </p>
+                      <p className="text-xs text-white/45">Temperature</p>
                       <p className="flex items-center gap-2 text-lg font-semibold text-white/90">
                         <Thermometer className="h-4 w-4 text-primary" />
                         {point?.temperature?.toFixed(1) || '—'}°C

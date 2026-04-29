@@ -83,9 +83,13 @@ export interface Database {
           name: string;
           description: string | null;
           category: 'panels' | 'inverters' | 'batteries' | 'accessories';
+          sub_category: string | null;
+          brand: string | null;
+          application: string[] | null;
           price: number;
           stock_quantity: number;
           specifications: Json | null;
+          technical_specs: Json | null;
           images: string[] | null;
           is_active: boolean;
           created_at: string;

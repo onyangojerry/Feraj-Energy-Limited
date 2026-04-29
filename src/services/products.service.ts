@@ -8,9 +8,13 @@ export interface Product {
   name: string;
   description: string | null;
   category: string;
+  sub_category?: string | null;
+  brand?: string | null;
+  application?: string[] | null;
   price: number;
   stock_quantity: number;
-  specifications: string[] | null;
+  specifications: any | null;
+  technical_specs?: Record<string, any> | null;
   images: string[] | null;
   is_active: boolean;
   created_at: string;
@@ -21,9 +25,13 @@ export interface CreateProductDto {
   name: string;
   description?: string;
   category: 'panels' | 'inverters' | 'batteries' | 'accessories';
+  sub_category?: string;
+  brand?: string;
+  application?: string[];
   price: number;
   stock_quantity?: number;
   specifications?: string[];
+  technical_specs?: Record<string, any>;
   images?: string[];
 }
 

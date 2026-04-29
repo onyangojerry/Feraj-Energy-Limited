@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { directors } from '@/app/data/teamData';
-import { ChevronDown, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Team() {
   const [openIds, setOpenIds] = useState<Record<string, boolean>>({});
@@ -35,10 +36,7 @@ export function Team() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {directors.map((member) => (
-              <div
-                key={member.id}
-                className="group animate-reveal"
-              >
+              <div key={member.id} className="group animate-reveal">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                   <img
                     src={member.imageUrl}
@@ -126,28 +124,45 @@ export function Team() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white/92">Join Our Team</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white/92">
+                Join Our Team
+              </h2>
               <p className="text-xl text-white/60 max-w-2xl mb-10 leading-relaxed">
                 We&apos;re always looking for talented individuals passionate
-                about clean energy and sustainability. Join us in shaping the future of power in East Africa.
+                about clean energy and sustainability. Join us in shaping the
+                future of power in East Africa.
               </p>
-              <button className="px-8 py-4 bg-primary/10 border border-primary/40 text-primary rounded-lg hover:bg-primary transition-all font-bold uppercase tracking-widest text-sm">
+              <Link
+                to="/careers"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary/10 border border-primary/40 text-white rounded-lg hover:bg-primary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer"
+              >
                 View Open Positions
-              </button>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               <div className="border-l-2 border-primary/20 pl-6 py-2">
-                <div className="text-4xl font-bold text-primary mb-2">2,500+</div>
-                <div className="text-xs uppercase tracking-widest text-white/40 font-semibold">Team Members</div>
+                <div className="text-4xl font-bold text-primary mb-2">
+                  5+
+                </div>
+                <div className="text-xs uppercase tracking-widest text-white/40 font-semibold">
+                  Team Members
+                </div>
               </div>
               <div className="border-l-2 border-accent/20 pl-6 py-2">
                 <div className="text-4xl font-bold text-accent mb-2">45+</div>
-                <div className="text-xs uppercase tracking-widest text-white/40 font-semibold">Nationalities</div>
+                <div className="text-xs uppercase tracking-widest text-white/40 font-semibold">
+                  Nationalities
+                </div>
               </div>
               <div className="border-l-2 border-primary/20 pl-6 py-2">
-                <div className="text-4xl font-bold text-primary mb-2">4.8/5</div>
-                <div className="text-xs uppercase tracking-widest text-white/40 font-semibold">Satisfaction</div>
+                <div className="text-4xl font-bold text-primary mb-2">
+                  4.9/5
+                </div>
+                <div className="text-xs uppercase tracking-widest text-white/40 font-semibold">
+                  Satisfaction
+                </div>
               </div>
             </div>
           </div>

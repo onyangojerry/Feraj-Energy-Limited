@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { cn } from './utils';
 
-function CinematicShell({
-  className,
-  ...props
-}: React.ComponentProps<'div'>) {
+function CinematicShell({ className, ...props }: React.ComponentProps<'div'>) {
   return <div className={cn('cinematic-shell', className)} {...props} />;
 }
 
@@ -22,16 +19,16 @@ function CinematicPanel({
 }: React.ComponentProps<'div'> & { strong?: boolean }) {
   return (
     <div
-      className={cn(strong ? 'cinematic-panel-strong' : 'cinematic-panel', className)}
+      className={cn(
+        strong ? 'cinematic-panel-strong' : 'cinematic-panel',
+        className
+      )}
       {...props}
     />
   );
 }
 
-function CinematicEyebrow({
-  className,
-  ...props
-}: React.ComponentProps<'p'>) {
+function CinematicEyebrow({ className, ...props }: React.ComponentProps<'p'>) {
   return <p className={cn('cinematic-eyebrow', className)} {...props} />;
 }
 

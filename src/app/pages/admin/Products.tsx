@@ -251,22 +251,22 @@ export function AdminProducts() {
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,rgba(13,16,23,0.96),rgba(8,10,15,0.86))] p-6 sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(49,209,122,0.12),transparent_30%),radial-gradient(circle_at_90%_0%,rgba(73,201,255,0.1),transparent_28%)]" />
         <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p className="cinematic-eyebrow">Catalog Control</p>
-          <h1 className="mt-2 text-3xl font-semibold text-white/92">
-            Product Management
-          </h1>
-          <p className="mt-2 text-sm text-white/60">
-            Add, edit, and manage your products
-          </p>
-        </div>
-        <button
-          onClick={() => setShowForm(true)}
-          className="inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-primary px-4 py-2 text-white transition hover:bg-primary/90"
-        >
-          <Plus className="h-5 w-5" />
-          Add Product
-        </button>
+          <div>
+            <p className="cinematic-eyebrow">Catalog Control</p>
+            <h1 className="mt-2 text-3xl font-semibold text-white/92">
+              Product Management
+            </h1>
+            <p className="mt-2 text-sm text-white/60">
+              Add, edit, and manage your products
+            </p>
+          </div>
+          <button
+            onClick={() => setShowForm(true)}
+            className="inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-primary px-4 py-2 text-white transition hover:bg-primary/90"
+          >
+            <Plus className="h-5 w-5" />
+            Add Product
+          </button>
         </div>
       </div>
 
@@ -291,9 +291,7 @@ export function AdminProducts() {
           </div>
         </div>
         <div className="cinematic-panel p-4">
-          <div className="text-sm text-white/55">
-            Low Stock (&lt;10)
-          </div>
+          <div className="text-sm text-white/55">Low Stock (&lt;10)</div>
           <div className="text-2xl font-semibold text-amber-300">
             {
               products.filter(

@@ -1,4 +1,11 @@
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  FileText,
+  Globe,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Footer() {
@@ -56,22 +63,34 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-white/90">Products</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/products" className="hover:text-primary transition text-white/70">
+                <Link
+                  to="/products"
+                  className="hover:text-primary transition text-white/70"
+                >
                   Solar Panels
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-primary transition text-white/70">
+                <Link
+                  to="/products"
+                  className="hover:text-primary transition text-white/70"
+                >
                   Inverters
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-primary transition text-white/70">
+                <Link
+                  to="/products"
+                  className="hover:text-primary transition text-white/70"
+                >
                   Battery Storage
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-primary transition text-white/70">
+                <Link
+                  to="/products"
+                  className="hover:text-primary transition text-white/70"
+                >
                   Mounting Systems
                 </Link>
               </li>
@@ -83,13 +102,27 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-white/90">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/about" className="hover:text-primary transition text-white/70">
+                <Link
+                  to="/about"
+                  className="hover:text-primary transition text-white/70"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/team" className="hover:text-primary transition text-white/70">
+                <Link
+                  to="/team"
+                  className="hover:text-primary transition text-white/70"
+                >
                   Our Team
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/careers"
+                  className="hover:text-primary transition text-white/70"
+                >
+                  Careers
                 </Link>
               </li>
               <li>
@@ -123,11 +156,27 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-8 text-center text-sm text-white/52">
+        <div className="mt-10 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/52">
           <p>
             &copy; {new Date().getFullYear()} Feraj Solar. All rights reserved.
             Powering a sustainable future.
           </p>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/terms-of-service"
+              className="hover:text-primary transition flex items-center gap-1.5"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              Terms of Service
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="hover:text-primary transition flex items-center gap-1.5"
+            >
+              <Globe className="h-3.5 w-3.5" />
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -83,10 +83,7 @@ export function Orders() {
           </div>
           <div className="space-y-4">
             {Array.from({ length: 4 }).map((_, idx) => (
-              <div
-                key={idx}
-                className="cinematic-panel p-6 animate-pulse"
-              >
+              <div key={idx} className="cinematic-panel p-6 animate-pulse">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="h-10 w-10 rounded-full bg-white/10" />
@@ -115,7 +112,9 @@ export function Orders() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(73,201,255,0.16),transparent_36%),radial-gradient(circle_at_84%_78%,rgba(49,209,122,0.14),transparent_42%)]" />
           <div className="relative">
             <p className="cinematic-eyebrow">Account Chapter • Orders</p>
-            <h1 className="mt-3 text-4xl font-semibold text-white/90 sm:text-5xl">My Orders</h1>
+            <h1 className="mt-3 text-4xl font-semibold text-white/90 sm:text-5xl">
+              My Orders
+            </h1>
             <p className="mt-3 text-white/60">
               Track and manage your solar equipment orders
             </p>
@@ -125,23 +124,33 @@ export function Orders() {
         {orders.length > 0 && (
           <section className="mt-7 grid grid-cols-1 gap-4 md:grid-cols-4">
             <div className="cinematic-panel p-4">
-              <p className="text-xs uppercase tracking-[0.14em] text-white/45">Total</p>
-              <p className="mt-2 text-2xl font-semibold text-white/90">{orders.length}</p>
+              <p className="text-xs uppercase tracking-[0.14em] text-white/45">
+                Total
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-white/90">
+                {orders.length}
+              </p>
             </div>
             <div className="cinematic-panel p-4">
-              <p className="text-xs uppercase tracking-[0.14em] text-white/45">Delivered</p>
+              <p className="text-xs uppercase tracking-[0.14em] text-white/45">
+                Delivered
+              </p>
               <p className="mt-2 text-2xl font-semibold text-primary">
                 {orders.filter((order) => order.status === 'delivered').length}
               </p>
             </div>
             <div className="cinematic-panel p-4">
-              <p className="text-xs uppercase tracking-[0.14em] text-white/45">In Transit</p>
+              <p className="text-xs uppercase tracking-[0.14em] text-white/45">
+                In Transit
+              </p>
               <p className="mt-2 text-2xl font-semibold text-sky-300">
                 {orders.filter((order) => order.status === 'shipped').length}
               </p>
             </div>
             <div className="cinematic-panel p-4">
-              <p className="text-xs uppercase tracking-[0.14em] text-white/45">Processing</p>
+              <p className="text-xs uppercase tracking-[0.14em] text-white/45">
+                Processing
+              </p>
               <p className="mt-2 text-2xl font-semibold text-amber-300">
                 {
                   orders.filter(

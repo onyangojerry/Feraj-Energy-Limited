@@ -143,7 +143,9 @@ export function Profile() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(73,201,255,0.16),transparent_35%),radial-gradient(circle_at_84%_78%,rgba(49,209,122,0.14),transparent_42%)]" />
           <div className="relative">
             <p className="cinematic-eyebrow">Account Chapter • Profile</p>
-            <h1 className="mt-3 text-4xl font-semibold text-white/90 sm:text-5xl">My Profile</h1>
+            <h1 className="mt-3 text-4xl font-semibold text-white/90 sm:text-5xl">
+              My Profile
+            </h1>
             <p className="mt-3 text-white/60">
               Manage your account information and preferences
             </p>

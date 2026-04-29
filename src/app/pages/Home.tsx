@@ -29,49 +29,66 @@ function ChaptersVertical({ chapters }: { chapters: ChapterItem[] }) {
     offset: ['start end', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0.08, 0.2, 0.8, 0.92], [0, 1, 1, 0]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.08, 0.2, 0.8, 0.92],
+    [0, 1, 1, 0]
+  );
   const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   return (
     <section ref={containerRef} className="relative py-20 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(49,209,122,0.08),transparent_50%),radial-gradient(circle_at_80%_50%,rgba(73,201,255,0.06),transparent_50%)]" />
-      
-      <motion.div style={{ opacity, y }} className="mx-auto max-w-[var(--section-max-width)] px-6 relative">
+
+      <motion.div
+        style={{ opacity, y }}
+        className="mx-auto max-w-[var(--section-max-width)] px-6 relative"
+      >
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-semibold leading-tight text-white/92 lg:text-6xl lg:leading-[1.1]">
-            Built different.<br />
+            Built different.
+            <br />
             <span className="text-primary">Built to last.</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-base text-white/52">
-            Every component, every decision, every detail is engineered for one purpose — 
-            delivering reliable, clean energy that performs for decades.
+            Every component, every decision, every detail is engineered for one
+            purpose — delivering reliable, clean energy that performs for
+            decades.
           </p>
         </div>
 
         <div className="relative">
           <div className="absolute left-[19px] top-8 bottom-8 w-px bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0 lg:left-[139px]" />
-          
+
           {chapters.map((chapter, index) => (
             <motion.div
               key={chapter.title}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.1,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
               className="relative grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4 py-6"
             >
               <div className="flex items-start gap-6 lg:justify-end">
                 <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-background border border-white/12 flex items-center justify-center shadow-[0_0_20px_rgba(49,209,122,0.2)]">
                   <chapter.icon className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white/92 pt-1">{chapter.title}</h3>
+                <h3 className="text-2xl font-semibold text-white/92 pt-1">
+                  {chapter.title}
+                </h3>
               </div>
-              <p className="text-lg text-white/62 leading-relaxed pt-2">{chapter.text}</p>
+              <p className="text-lg text-white/62 leading-relaxed pt-2">
+                {chapter.text}
+              </p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -97,12 +114,19 @@ function GallerySection({ items }: { items: GalleryItem[] }) {
     offset: ['start end', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0.1, 0.25, 0.75, 0.9], [0, 1, 1, 0]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.1, 0.25, 0.75, 0.9],
+    [0, 1, 1, 0]
+  );
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
   return (
     <section ref={containerRef} className="relative py-20">
-      <motion.div style={{ opacity, y }} className="mx-auto max-w-[var(--section-max-width)] px-6">
+      <motion.div
+        style={{ opacity, y }}
+        className="mx-auto max-w-[var(--section-max-width)] px-6"
+      >
         <h2 className="text-center text-3xl font-semibold text-white/92 lg:text-4xl">
           Our solutions in action
         </h2>
@@ -124,8 +148,12 @@ function GallerySection({ items }: { items: GalleryItem[] }) {
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,8,12,0.08)_0%,rgba(8,8,12,0.72)_88%)]" />
               <figcaption className="absolute bottom-0 left-0 right-0 p-5">
-                <p className="text-xs uppercase tracking-[0.13em] text-white/50">Scene</p>
-                <p className="mt-1 text-lg font-semibold text-white/90">{item.label}</p>
+                <p className="text-xs uppercase tracking-[0.13em] text-white/50">
+                  Scene
+                </p>
+                <p className="mt-1 text-lg font-semibold text-white/90">
+                  {item.label}
+                </p>
               </figcaption>
             </motion.figure>
           ))}
@@ -195,7 +223,7 @@ export function Home() {
     },
   ];
 
-  return (
+   return (
     <div className="min-h-screen text-white/86">
       <section ref={heroRef} className="relative h-[200vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
@@ -213,11 +241,13 @@ export function Home() {
             style={{ y: heroTitleY, opacity: heroTitleOpacity }}
           >
             <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] text-white/92 sm:text-6xl lg:text-7xl">
-              Energy Independence.<br />
+              Energy Independence.
+              <br />
               <span className="text-primary">Delivered.</span>
             </h1>
             <p className="mt-4 max-w-xl text-base text-white/68">
-              Stop renting energy. Start owning your power with systems built to perform for 30+ years.
+              Stop renting energy. Start owning your power with systems built to
+              perform for 30+ years.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
@@ -234,8 +264,7 @@ export function Home() {
               </Link>
             </div>
           </motion.div>
-
-          </div>
+        </div>
       </section>
 
       <section className="cinematic-section pt-12 pb-4">
@@ -244,32 +273,32 @@ export function Home() {
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-white/8" />
             </div>
-            
+
             <div className="relative grid grid-cols-2 md:grid-cols-4">
               {[
-                { 
-                  title: 'Proven Legacy', 
-                  value: '25+', 
+                {
+                  title: 'Proven Legacy',
+                  value: '3+',
                   suffix: 'Years',
-                  desc: 'Delivering solar excellence since 1999' 
+                  desc: 'Delivering solar excellence since 1999',
                 },
-                { 
-                  title: 'Trusted Nationwide', 
-                  value: '500K', 
+                {
+                  title: 'Trusted Nationwide',
+                  value: '50',
                   suffix: '+',
-                  desc: 'Systems powering homes & businesses' 
+                  desc: 'Complete projects across the world with a 4.9+/5 rating',
                 },
-                { 
-                  title: 'Customer First', 
-                  value: '98', 
+                {
+                  title: 'Customer First',
+                  value: '98',
                   suffix: '%',
-                  desc: 'Satisfaction rate across all reviews' 
+                  desc: 'Satisfaction rate across all reviews',
                 },
-                { 
-                  title: 'Clean Capacity', 
-                  value: '2.5', 
+                {
+                  title: 'Clean Capacity',
+                  value: '2.5',
                   suffix: 'GW',
-                  desc: 'Renewable energy generated to date' 
+                  desc: 'Renewable energy generated to date',
                 },
               ].map((stat, index) => (
                 <motion.div
@@ -277,16 +306,24 @@ export function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="group relative flex flex-col items-center py-10"
                 >
                   {index > 0 && (
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-16 bg-white/8 md:hidden" />
                   )}
-                  <p className="text-xs uppercase tracking-[0.16em] text-white/40 font-medium">{stat.title}</p>
+                  <p className="text-xs uppercase tracking-[0.16em] text-white/40 font-medium">
+                    {stat.title}
+                  </p>
                   <p className="mt-4 text-5xl md:text-6xl font-semibold text-primary">
                     {stat.value}
-                    <span className="text-3xl md:text-4xl text-primary/70 ml-1">{stat.suffix}</span>
+                    <span className="text-3xl md:text-4xl text-primary/70 ml-1">
+                      {stat.suffix}
+                    </span>
                   </p>
                   <p className="mt-3 text-sm text-white/48">{stat.desc}</p>
                 </motion.div>
@@ -302,7 +339,7 @@ export function Home() {
 
       <section className="py-16 relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(49,209,122,0.12),transparent_60%)]" />
-        
+
         <motion.div
           className="relative mx-auto max-w-[var(--section-max-width)] px-6 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -314,7 +351,8 @@ export function Home() {
             Take control of your <span className="text-primary">energy</span>
           </h2>
           <p className="mt-4 max-w-lg mx-auto text-base text-white/52">
-            Join thousands who've made the switch. Get a custom quote for your home or business today.
+            Join thousands who've made the switch. Get a custom quote for your
+            home or business today.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
